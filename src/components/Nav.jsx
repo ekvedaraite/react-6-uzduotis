@@ -1,13 +1,12 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
     <nav>
-      <Link to="/">Home page</Link>
-      <Link to="/form">Form page</Link>
+      <Link to="/"></Link>
+      <Link to="/form"></Link>
     </nav>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav

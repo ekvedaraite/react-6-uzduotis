@@ -1,9 +1,9 @@
-import React from 'react';
+const Cards = ({ data, selectedCity }) => {
+  const filteredData = selectedCity !== 'All' ? data.filter((property) => property.city === selectedCity) : data
 
-const Cards = ({ data }) => {
   return (
     <section className="cards">
-      {data.map((property, index) => (
+      {filteredData.map((property, index) => (
         <div key={index} className="card">
           <img src={property.image} alt={property.description} />
           <div className="text">
@@ -13,8 +13,9 @@ const Cards = ({ data }) => {
           </div>
         </div>
       ))}
+      {filteredData.length === 0 && <p>No properties found for the selected city.</p>}
     </section>
-  );
-};
+  )
+}
 
-export default Cards;
+export default Cards
